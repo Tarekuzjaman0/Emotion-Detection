@@ -19,13 +19,28 @@ Before running the script, make sure you have Python installed on your system. Y
 - `opencv-python`
 - `deepface`
 
-You can easily install them using the provided `requirements.txt` file.
+You can easily install them using the provided `requirements.txt` file:
 ```bash
-  pip install -r requirements.txt
-  
+pip install -r requirements.txt
 
-## ⚙️ Installation
+⚙️ Installation
+Clone this repository to your local machine:
 
-1. Clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/Tarekuzjaman0/Emotion-Detection.git
+Bash
+git clone https://github.com/Tarekuzjaman0/Emotion-Detection.git
+cd Emotion-Detection
+Run the script:
+
+Bash
+python main.py
+💻 Usage
+The webcam window will open, and you will see a bounding box around detected faces along with the predicted emotion.
+
+Press q on your keyboard to close the webcam window and exit the program.
+
+⚠️ Troubleshooting
+Camera Index Issue: If your camera doesn't turn on or shows an error, open the script and change the cv2.VideoCapture(0) index to 1 or 2 depending on your active camera setup (especially useful if you are using virtual cameras like Iriun Webcam).
+
+👨‍💻 Author
+Tareque Ahmed | Email: tarekuzjaman.dev@gmail.com
+
