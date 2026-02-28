@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 **Step 4:** Run the Python script:
 ```bash
-python main.py
+python app.py
 ```
 *(Note: Replace `main.py` with the actual name of your Python file if it is different.)*
 
