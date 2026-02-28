@@ -1,11 +1,11 @@
 import cv2
 from deepface import DeepFace
 
-# Iriun ক্যামেরার ইনডেক্স (0 কাজ না করলে 1 বা 2 দিবেন)
+# Iriun camera index (use 1 or 2 if 0 doesn't work)
 cap = cv2.VideoCapture(0)
 
 if not cap.isOpened():
-    print("Error: Could not open video stream. '0' কাজ না করলে '1' বা '2' দিয়ে চেষ্টা করুন।")
+    print("Error: Could not open video stream. Try '1' or '2' if '0' doesn't work.")
     exit()
 
 while True:
@@ -15,42 +15,42 @@ while True:
         print("Failed to grab frame")
         break
         
-    # ফ্রেম সাইজ কিছুটা ছোট করে নেওয়া
+    # Resize the frame slightly for faster processing
     frame = cv2.resize(frame, (640, 480))
     
     try:
-        # DeepFace দিয়ে ফেস এবং ইমোশন ডিটেক্ট করা
-        # enforce_detection=False দেওয়া হয়েছে যাতে ফেস না পেলেও প্রোগ্রাম ক্র্যাশ না করে
+        # Detect face and emotion using DeepFace
+        # enforce_detection=False prevents the program from crashing if no face is found
         results = DeepFace.analyze(frame, actions=['emotion'], enforce_detection=False)
         
-        # DeepFace এর রেজাল্ট একটি লিস্ট হিসেবে আসে
+        # DeepFace returns results as a list
         for face in results:
-            # মুখের চারপাশের বক্স এর কোঅর্ডিনেট
+            # Coordinates for the bounding box around the face
             x = face['region']['x']
             y = face['region']['y']
             w = face['region']['w']
             h = face['region']['h']
             
-            # বক্স ড্র করা
+            # Draw the bounding box
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
             
-            # সবচেয়ে বেশি মিলে যাওয়া ইমোশন বের করা
+            # Extract the dominant emotion
             dominant_emotion = face['dominant_emotion']
             
-            # স্ক্রিনে ইমোশন এর নাম দেখানো
+            # Display the emotion name on the screen
             cv2.putText(frame, dominant_emotion, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
             
     except Exception as e:
-        # কোনো কারণে ফেস বুঝতে না পারলে পাস করবে
+        # Pass if no face is detected or an error occurs
         pass
 
-    # ভিডিও উইন্ডো দেখানো
+    # Display the video window
     cv2.imshow('Emotion Detection - DeepFace & Iriun', frame)
 
-    # 'q' চাপলে বের হয়ে যাবে
+    # Press 'q' to exit the loop
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# ক্যামেরা রিলিজ করা
+# Release the camera and close windows
 cap.release()
 cv2.destroyAllWindows()

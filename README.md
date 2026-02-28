@@ -24,5 +24,5 @@ Before running the script, make sure you have Python installed on your system. Y
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone [https://github.com/yourusername/your-repo-name.git](https://github.com/yourusername/your-repo-name.git)
-   cd your-repo-name
+   git clone [https://github.com/Tarekuzjaman0/Emotion-Detection.git](https://github.com/Tarekuzjaman0/Emotion-Detection.git)
+   cd Emotion-Detection
