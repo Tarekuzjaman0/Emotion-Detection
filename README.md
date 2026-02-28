@@ -4,7 +4,6 @@ A simple and efficient Python script that detects faces and analyzes human emoti
 
 ## 📸 Preview
 
-
 ![Project Preview](preview/preview.png)
 
 ## 🚀 Features
@@ -19,6 +18,8 @@ Before running the script, make sure you have Python installed on your system. Y
 
 - `opencv-python`
 - `deepface`
+
+You can easily install them using the provided `requirements.txt` file.
 
 ## ⚙️ Installation
 
