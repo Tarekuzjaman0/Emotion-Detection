@@ -20,6 +20,9 @@ Before running the script, make sure you have Python installed on your system. Y
 - `deepface`
 
 You can easily install them using the provided `requirements.txt` file.
+```bash
+  pip install -r requirements.txt
+  
 
 ## ⚙️ Installation
 
