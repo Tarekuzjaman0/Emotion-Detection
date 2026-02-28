@@ -3,7 +3,7 @@
 A simple and efficient Python script that detects faces and analyzes human emotions in real-time using a webcam (compatible with Iriun Webcam and default laptop cameras). It uses OpenCV for video capturing and DeepFace for highly accurate emotion prediction.
 
 ## 📸 Preview
-*(Ensure you have an image named `preview.png` inside the `preview` folder in your repository)*
+
 
 ![Project Preview](preview/preview.png)
 
