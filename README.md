@@ -4,6 +4,7 @@ A simple and efficient Python script that detects faces and analyzes human emoti
 
 ## 📸 Preview
 
+
 ![Project Preview](preview/preview.png)
 
 🎥 **Watch the video demo here:** [Instagram Reel](https://www.instagram.com/reel/DVL5bz5FfLW/)
